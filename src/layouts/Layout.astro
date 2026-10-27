@@ -1,6 +1,11 @@
 ---
 import '../styles/global.css';
 
+interface BreadcrumbItem {
+  name: string;
+  path: string;
+}
+
 interface Props {
   title: string;
   description?: string;
@@ -8,12 +13,13 @@ interface Props {
   path?: string;
   type?: 'website' | 'article';
   keywords?: string;
+  breadcrumbs?: BreadcrumbItem[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const SITE = 'https://englishtoburmese.com';
 const DEFAULT_DESCRIPTION =
-  'Free English to Burmese translator online. Translate English to Burmese text, sentences, documents, and audio into Unicode Myanmar script.';
+  'Free English to Burmese translator online. Translate English text, sentences, speech, and documents (PDF, Word, TXT) into Unicode Myanmar script accurately.';
 const DEFAULT_KEYWORDS = [
   'english to burmese',
   'translate english to burmese',
@@ -41,6 +47,7 @@ const {
   path = '/',
   type = 'website',
   keywords = DEFAULT_KEYWORDS,
+  breadcrumbs,
   jsonLd,
 } = Astro.props;
 
@@ -52,6 +59,7 @@ const nav = [
   { href: '/about', label: 'About', key: 'about' },
   { href: '/contact', label: 'Contact', key: 'contact' },
 ];
+
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -60,7 +68,34 @@ const organization = {
   logo: `${SITE}/logo.png`,
   description: DEFAULT_DESCRIPTION,
 };
-const schema = [organization, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
+
+const breadcrumbSchema =
+  breadcrumbs && breadcrumbs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE,
+          },
+          ...breadcrumbs.map((b, idx) => ({
+            '@type': 'ListItem',
+            position: idx + 2,
+            name: b.name,
+            item: new URL(b.path, SITE).toString(),
+          })),
+        ],
+      }
+    : null;
+
+const schema = [
+  organization,
+  ...(breadcrumbSchema ? [breadcrumbSchema] : []),
+  ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []),
+];
 ---
 
 <html lang="en">
@@ -84,6 +119,8 @@ const schema = [organization, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [js
     <link rel="alternate" hreflang="en" href={canonical} />
     <link rel="alternate" hreflang="my" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={canonical} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="help" type="text/plain" href="/llms.txt" title="LLM Information" />
 
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="englishtoburmese.com" />
@@ -117,14 +154,14 @@ const schema = [organization, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [js
     <div class="site">
       <header class="site-header">
         <div class="site-header-inner">
-          <a class="logo" href="/">
+          <a class="logo" href="/" aria-label="englishtoburmese.com Homepage">
             <img class="logo-mark" src="/logo.png" width="42" height="42" alt="englishtoburmese.com logo" />
             <span class="logo-text">
               <span class="logo-name">englishtoburmese.com</span>
               <span class="logo-tag">English to Burmese</span>
             </span>
           </a>
-          <nav class="site-nav" aria-label="Primary">
+          <nav class="site-nav" aria-label="Primary navigation">
             {nav.map((item) => (
               <a href={item.href} aria-current={current === item.key ? 'page' : undefined}>
                 {item.label}
@@ -155,8 +192,10 @@ const schema = [organization, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [js
             </div>
             <div>
               <h2>Company</h2>
-              <a href="/about">About</a>
+              <a href="/about">About us</a>
               <a href="/contact">Contact us</a>
+              <a href="/sitemap.xml">XML Sitemap</a>
+              <a href="/llms.txt">LLMs Context</a>
             </div>
             <div>
               <h2>Legal</h2>

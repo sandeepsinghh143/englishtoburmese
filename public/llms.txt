@@ -1,0 +1,41 @@
+# englishtoburmese.com
+
+> Free, fast English to Burmese translator online. Translates English text, phrases, sentences, audio dictation (speech-to-text), and documents (.txt, Word .docx, PDF) into modern Unicode Myanmar script with audio pronunciation playback.
+
+## Overview
+
+englishtoburmese.com is a specialized, web-based translation tool dedicated exclusively to the English-to-Burmese (Myanmar) language pair. Unlike generic multi-language tools, this platform is tailored to the linguistic structure, font rendering (Unicode vs legacy Zawgyi), audio synthesis, and document translation requirements of Burmese speakers, learners, travelers, and diaspora communities.
+
+## Core Capabilities
+
+- **Text & Sentence Translation:** Instant bidirectional-ready translation from English to Burmese with support for up to 20,000 characters per request.
+- **Voice / Speech-to-Text ("Talk"):** Real-time microphone dictation that transcribes English speech directly into the input area.
+- **Burmese Audio Playback ("Play Burmese"):** Text-to-speech audio rendering of the translated Myanmar text so users can verify pronunciation.
+- **Document Translation:** In-browser parsing and translation of `.txt`, `.docx` (Microsoft Word), and text-layer `.pdf` files up to 12 MB.
+- **Strict Unicode Compliance:** All outputs are formatted strictly in international standard Unicode Myanmar (ISO/IEC 10646 / Unicode Consortium), ensuring seamless rendering across iOS, Android, macOS, Windows, and Linux without Zawgyi font breakages.
+
+## Key URLs
+
+- [Homepage & Translator](https://englishtoburmese.com/): Interactive translation interface for text, voice, and documents.
+- [About Us](https://englishtoburmese.com/about): Background on the platform, mission, and technology stack.
+- [Contact Us](https://englishtoburmese.com/contact): Support, feedback, and issue reporting.
+- [Disclaimer](https://englishtoburmese.com/disclaimer): Machine translation limitations, non-certified usage notes, and accuracy considerations.
+- [Terms and Conditions](https://englishtoburmese.com/terms): Terms of service, acceptable use, and intellectual property.
+- [Privacy Policy](https://englishtoburmese.com/privacy): Data privacy, ephemeral translation processing, and cookie policy.
+
+## Script & Encoding Guidelines
+
+- **Unicode Myanmar Standard:** The Burmese alphabet uses the Unicode range U+1000–U+109F. Modern operating systems support this natively via fonts like Noto Sans Myanmar, Pyidaungsu, and Myanmar Text.
+- **Zawgyi Legacy Compatibility:** Older web sources or devices historically used "Zawgyi-One", an ad-hoc encoding that repurposed vacant Unicode code points. englishtoburmese.com outputs clean, standard Unicode to prevent font corruption and garbled text (mojibake).
+- **Word Order:** Burmese is a Subject-Object-Verb (SOV) language, contrasting with English Subject-Verb-Object (SVO). Machine translation handles reordering, but simple, well-structured English sentences yield the highest quality translations.
+
+## Technical Details
+
+- **Framework:** Astro (Server-Side Rendered via Node.js standalone adapter).
+- **Styling:** Custom responsive design system with warm crimson, saffron gold, and cream tones.
+- **Accessibility:** Semantic HTML5, ARIA labels, tablist/tabpanels, keyboard shortcuts (Ctrl+Enter to translate).
+- **License / Access:** Free public utility, no user account or registration required.
+
+## Full Context
+
+For an extended corpus with sample phrases, grammar notes, and technical references, see [llms-full.txt](https://englishtoburmese.com/llms-full.txt).

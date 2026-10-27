@@ -1,4 +1,12 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
+# Disallow backend API endpoints from being crawled
+Disallow: /api/
+
+# Sitemap location
 Sitemap: https://englishtoburmese.com/sitemap.xml
+
+# LLM & AI agent context
+# See https://englishtoburmese.com/llms.txt for model context
