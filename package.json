@@ -1,0 +1,21 @@
+{
+  "name": "englishtoburmese",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/node": "^11.1.9",
+    "astro": "^7.4.2",
+    "mammoth": "^1.13.0",
+    "tesseract.js": "^7.0.0",
+    "unpdf": "^1.9.1"
+  }
+}

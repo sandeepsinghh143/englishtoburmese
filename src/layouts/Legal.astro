@@ -1,0 +1,26 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  heading: string;
+  updated: string;
+  description: string;
+  current?: string;
+  path?: string;
+  keywords?: string;
+}
+
+const { title, heading, updated, description, current = '', path = '/', keywords } = Astro.props;
+---
+
+<Layout title={title} description={description} current={current} path={path} type="article" keywords={keywords}>
+  <article class="legal">
+    <p class="legal-kicker">englishtoburmese.com</p>
+    <h1>{heading}</h1>
+    <p class="legal-meta">Last updated: {updated}</p>
+    <div class="legal-body">
+      <slot />
+    </div>
+  </article>
+</Layout>

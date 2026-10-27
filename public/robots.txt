@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://englishtoburmese.com/sitemap.xml

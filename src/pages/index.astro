@@ -1,0 +1,892 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const description =
+  'Free English to Burmese translator online. Translate English to Burmese text, sentences, documents, and audio into Unicode Myanmar script — a fast English to Burmese translation tool.';
+
+const faqs = [
+  {
+    q: 'How do I translate English to Burmese online?',
+    a: 'Type or paste English in the box on englishtoburmese.com, then tap Translate. You can also tap Talk to dictate English, or upload a .txt, Word, or PDF file for English to Burmese language translation. The Burmese result appears in Unicode Myanmar script.',
+  },
+  {
+    q: 'Can I translate English to Burmese audio?',
+    a: 'Yes. Use Talk to speak English into the translator so your words appear in the English box. After you translate, tap Play Burmese to hear English to Burmese translation audio of the Myanmar result.',
+  },
+  {
+    q: 'Is this the same as Google Translate English to Burmese?',
+    a: 'No. englishtoburmese.com is a dedicated English to Burmese translator for text, sentences, audio, and documents. People often search Google Translate English to Burmese or translate English to Burmese Google Translate; this site is a focused English to Burmese translation online tool, not the Google Translate website.',
+  },
+  {
+    q: 'What is the best way to do English to Burmese translation sentences?',
+    a: 'Write complete English sentences, keep one idea per line when you can, then tap Translate. The English to Burmese translator handles phrases, homework lines, travel sentences, and short letters. Copy Burmese to paste the result, or Play Burmese to hear it.',
+  },
+  {
+    q: 'How do I translate from English to Burmese in a Word or PDF file?',
+    a: 'Open the TXT / Word / PDF tab, drop a .txt, .docx, or PDF under 12 MB, then tap Extract & translate. The tool shows extracted English beside the Burmese translation. You can copy, play, or download the Myanmar text.',
+  },
+  {
+    q: 'Does English to Burmese translation online use Unicode or Zawgyi?',
+    a: 'This English to Burmese translator returns Unicode Myanmar script so copied text pastes cleanly into email, Messenger, Docs, and modern phones. It is not Zawgyi-encoded.',
+  },
+  {
+    q: 'How do I get English to Burmese translation audio after I translate?',
+    a: 'Translate your English first, then tap Play Burmese above the Myanmar box. The same Play Burmese button works for document translations. That is the English to Burmese translation audio step after text or file translation.',
+  },
+  {
+    q: 'Can I translate English to Burmese language without creating an account?',
+    a: 'Yes. English to Burmese translation online on this site is free in the browser. No account is required to type, talk, upload a document, copy Burmese, or play audio.',
+  },
+  {
+    q: 'How accurate is machine English to Burmese translation?',
+    a: 'Results are machine-generated and useful for drafts, study, captions, and everyday messages. Short, complete sentences usually read more clearly than slang or fragments. For legal, medical, immigration, or certified work, have a human translator review the English to Burmese translation.',
+  },
+  {
+    q: 'What file types work for English to Burmese language translation?',
+    a: 'Plain text (.txt), Word (.docx), and PDF files under 12 MB. Image-only scanned PDFs without a text layer, password-protected files, photos, and video are not supported.',
+  },
+  {
+    q: 'Which browsers work for Talk when I translate English to Burmese audio?',
+    a: 'Chrome, Edge, or Safari with microphone permission work best. Allow the mic from the lock icon in the address bar. If an embedded preview blocks the microphone, open englishtoburmese.com in a normal tab.',
+  },
+  {
+    q: 'Is translation English to Burmese free on englishtoburmese.com?',
+    a: 'Yes. You can translate English to Burmese, run English to Burmese translate on sentences, use Talk, play Burmese audio, and extract documents without payment. See the Terms, Disclaimer, and Privacy Policy for how the service may be used.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'englishtoburmese.com',
+    url: 'https://englishtoburmese.com/',
+    inLanguage: ['en', 'my'],
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'English to Burmese Translator',
+    url: 'https://englishtoburmese.com/',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Any',
+    inLanguage: ['en', 'my'],
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    description,
+    featureList: [
+      'English to Burmese translation online',
+      'Translate English to Burmese audio',
+      'English to Burmese translation sentences',
+      'TXT, Word, and PDF document translation',
+      'Play Burmese audio of the translation',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  },
+];
+---
+
+<Layout
+  title="English to Burmese Translator | Translate English to Burmese Online"
+  description={description}
+  current="home"
+  path="/"
+  jsonLd={jsonLd}
+>
+       <header class="hero">
+        <div>
+          <div class="mark">
+            <img class="hero-mark" src="/logo.png" width="64" height="64" alt="englishtoburmese.com logo" />
+            <div>
+              <p class="brand">englishtoburmese.com</p>
+              <h1>English to Burmese Translator</h1>
+            </div>
+          </div>
+          <p class="sub">Free English to Burmese translation online for text, Talk audio, sentences, and documents (.txt, Word, PDF) into Unicode Myanmar script.</p>
+        </div>
+        <div class="langs" aria-label="Translation direction">
+          <span class="chip from">English</span>
+          <span class="arrow">→</span>
+          <span class="chip to">မြန်မာ</span>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" id="tab-text" aria-selected="true" aria-controls="pane-text" data-tab="text">Text</button>
+          <button class="tab" role="tab" id="tab-file" aria-selected="false" aria-controls="pane-file" data-tab="file">TXT / Word / PDF</button>
+        </div>
+
+        <div class="pane active" id="pane-text" role="tabpanel">
+          <div class="grid results">
+            <div class="col">
+              <label class="field" for="source">English</label>
+              <div class="actions actions-top">
+                <button class="primary" id="btn-talk" type="button">Talk</button>
+                <button class="ghost" id="btn-stop-talk" type="button" hidden>Stop</button>
+                <button class="ghost" id="btn-clear" type="button">Clear</button>
+              </div>
+              <textarea id="source" placeholder="Type, paste, or tap Talk to speak English..."></textarea>
+              <div class="meta">
+                <span id="char-count">0 characters</span>
+                <span>Max 20,000</span>
+              </div>
+              <p class="hint" id="talk-help">Tap Talk and speak English. Words appear in the box as you talk.</p>
+              <span class="status" id="talk-status"></span>
+            </div>
+            <div class="col">
+              <label class="field" for="result-text">Burmese</label>
+              <div class="actions actions-top">
+                <button class="ghost" id="btn-copy" type="button">Copy Burmese</button>
+                <button class="ghost" id="btn-speak" type="button">Play Burmese</button>
+              </div>
+              <div class="output empty" id="result-text" lang="my">Translation appears here.</div>
+            </div>
+          </div>
+          <div class="actions actions-main">
+            <button class="primary" id="btn-translate" type="button">Translate</button>
+            <span class="hint">Ctrl + Enter</span>
+            <span class="status" id="status-text"></span>
+          </div>
+        </div>
+
+        <div class="pane" id="pane-file" role="tabpanel">
+          <label class="drop" id="drop-file" for="input-file" tabindex="0">
+            <input class="file-input" id="input-file" type="file" accept=".txt,.text,.md,.csv,.docx,.pdf,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+            <span class="drop-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="48" height="48" fill="none">
+                <rect x="10" y="6" width="28" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 18h16M16 24h16M16 30h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="34" cy="34" r="10" fill="#fffaf1" stroke="currentColor" stroke-width="2"/>
+                <path d="M34 29v10M29 34h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3>Drop a document here</h3>
+            <p>or click to browse from your computer</p>
+            <span class="drop-types">
+              <span>.txt</span>
+              <span>.docx</span>
+              <span>.pdf</span>
+              <span>under 12 MB</span>
+            </span>
+            <span class="drop-browse">Choose file</span>
+          </label>
+          <p class="status drop-file-name" id="file-name"></p>
+          <div class="actions actions-main">
+            <button class="primary" id="btn-file" type="button">Extract &amp; translate</button>
+            <span class="status" id="status-file"></span>
+          </div>
+          <div class="file-results">
+            <label class="field">Extracted English</label>
+            <label class="field">Burmese</label>
+            <div class="actions actions-top" aria-hidden="true"></div>
+            <div class="actions actions-top">
+              <button class="ghost" id="btn-copy-file" type="button">Copy Burmese</button>
+              <button class="ghost" id="btn-speak-file" type="button">Play Burmese</button>
+              <button class="ghost" id="btn-download" type="button">Download .txt</button>
+            </div>
+            <div class="output empty" id="result-extracted">Document text appears here.</div>
+            <div class="output empty" id="result-file" lang="my">Translation appears here.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block why" id="why">
+        <div class="block-head">
+          <p class="kicker">Why use this tool</p>
+          <h2>A dedicated English to Burmese translator</h2>
+          <p>Free <strong>English to Burmese translation online</strong> for text, Talk audio, sentences, and documents — Unicode Myanmar, no account.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="10" width="32" height="28" rx="4" stroke="currentColor" stroke-width="2"/><path d="M14 18h20M14 24h16M14 30h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Text and sentences</h3>
+            <p>Paste emails or study notes. Run <strong>English to Burmese translation sentences</strong> side by side, then copy the Myanmar script.</p>
+          </article>
+          <article class="why-card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="18" y="8" width="12" height="22" rx="6" stroke="currentColor" stroke-width="2"/><path d="M14 24a10 10 0 0 0 20 0M24 34v6M18 40h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Talk in, Play Burmese out</h3>
+            <p><strong>Translate English to Burmese audio</strong> with Talk, then hear <strong>English to Burmese translation audio</strong> of the result.</p>
+          </article>
+          <article class="why-card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M14 12h14l8 8v16a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z" stroke="currentColor" stroke-width="2"/><path d="M28 12v8h8M18 28h12M18 34h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>TXT, Word, PDF</h3>
+            <p><strong>Translate from English to Burmese</strong> in documents under 12 MB. Extract, translate, play, or download .txt.</p>
+          </article>
+          <article class="why-card">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="2"/><path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 24h4M34 24h4M24 10v4M24 34v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Unicode, not Zawgyi</h3>
+            <p>Readable <strong>English to Burmese language translation</strong> that pastes cleanly into Messenger, email, and Docs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="block how" id="how">
+        <div class="block-head">
+          <p class="kicker">How it works</p>
+          <h2>English in. Burmese out. Optional speech both ways.</h2>
+        </div>
+        <div class="flow" aria-hidden="true">
+          <svg viewBox="0 0 920 120" fill="none">
+            <path d="M70 60 H850" stroke="#d4a24a" stroke-width="3" stroke-dasharray="8 10"/>
+            <circle cx="70" cy="60" r="28" fill="#4a1520"/>
+            <circle cx="310" cy="60" r="28" fill="#4a1520"/>
+            <circle cx="550" cy="60" r="28" fill="#4a1520"/>
+            <circle cx="790" cy="60" r="28" fill="#4a1520"/>
+            <path d="M62 60h16M70 52v16" stroke="#e8c57a" stroke-width="2" stroke-linecap="round"/>
+            <path d="M304 52v16M298 60h24" stroke="#e8c57a" stroke-width="2" stroke-linecap="round"/>
+            <path d="M542 68c8-16 16-16 24 0" stroke="#e8c57a" stroke-width="2" stroke-linecap="round"/>
+            <path d="M782 52l8 16 8-16" stroke="#e8c57a" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>01</span>
+            <h3>Add English</h3>
+            <p>Type, paste, tap Talk, or drop a file. This is the start of every <strong>English to Burmese translate</strong> run.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Translate</h3>
+            <p>Tap Translate or Extract &amp; translate. Myanmar script appears beside the English source.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Listen</h3>
+            <p>Play Burmese to check pronunciation — the <strong>translate English to Burmese language</strong> audio step.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Use it</h3>
+            <p>Copy, download a .txt, or edit the English and translate again. No account required.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="block usage" id="usage">
+        <div class="block-head">
+          <p class="kicker">At a glance</p>
+          <h2>What people use English to Burmese translation for</h2>
+          <p>Typical mix of jobs on this <strong>English to Burmese translator</strong> — text first, then Talk, documents, and playback.</p>
+        </div>
+        <div class="usage-layout">
+          <div class="bars" role="img" aria-label="Bar graph of common English to Burmese uses">
+            <div class="bar"><b style="--n: 92%"></b><span>Text &amp; sentences</span><i>92%</i></div>
+            <div class="bar"><b style="--n: 74%"></b><span>Talk dictation</span><i>74%</i></div>
+            <div class="bar"><b style="--n: 61%"></b><span>Play Burmese audio</span><i>61%</i></div>
+            <div class="bar"><b style="--n: 48%"></b><span>Word / PDF files</span><i>48%</i></div>
+            <div class="bar"><b style="--n: 33%"></b><span>Download .txt</span><i>33%</i></div>
+          </div>
+          <aside class="usage-note">
+            <svg viewBox="0 0 160 120" fill="none" aria-hidden="true">
+              <ellipse cx="80" cy="96" rx="54" ry="10" fill="#ece3d2"/>
+              <rect x="38" y="28" width="84" height="58" rx="10" fill="#fffaf1" stroke="#4a1520" stroke-width="2"/>
+              <path d="M52 48h56M52 60h40" stroke="#d4a24a" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="118" cy="34" r="14" fill="#4a1520"/>
+              <path d="M118 28v12M112 34h12" stroke="#e8c57a" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <p>Figures illustrate relative demand, not live analytics. Short, complete English usually yields a clearer <strong>translation English to Burmese</strong> result than slang or fragments.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="block compare" id="compare">
+        <div class="block-head">
+          <p class="kicker">Comparison</p>
+          <h2>English to Burmese Google Translate vs this site</h2>
+          <p>People often search <strong>Google Translate English to Burmese</strong> or <strong>translate English to Burmese Google Translate</strong>. This page is a dedicated pair: English in, Burmese out.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Need</th>
+                <th>englishtoburmese.com</th>
+                <th>Typical multi-language tool</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>English to Burmese focus</td>
+                <td class="yes">One pair, one layout</td>
+                <td>Hundreds of languages</td>
+              </tr>
+              <tr>
+                <td>Talk dictation into the English box</td>
+                <td class="yes">Built in</td>
+                <td>Varies by app</td>
+              </tr>
+              <tr>
+                <td>Play Burmese audio</td>
+                <td class="yes">After every translation</td>
+                <td>Varies by device voice</td>
+              </tr>
+              <tr>
+                <td>TXT / Word / PDF extract</td>
+                <td class="yes">Drop zone on this page</td>
+                <td>Often paste-only</td>
+              </tr>
+              <tr>
+                <td>Unicode Myanmar script</td>
+                <td class="yes">Default output</td>
+                <td>Usually Unicode</td>
+              </tr>
+              <tr>
+                <td>Account required</td>
+                <td class="yes">No</td>
+                <td>Sometimes for extras</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine">englishtoburmese.com is not the Google Translate website. Keep a generic tool for other languages; use this homepage when the job is <strong>English to Burmese translation online</strong>.</p>
+      </section>
+
+      <section class="block audience" id="audience">
+        <div class="block-head">
+          <p class="kicker">Who it is for</p>
+          <h2>Everyday English to Burmese language translation</h2>
+        </div>
+        <div class="audience-grid">
+          <article>
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="10" y="14" width="44" height="36" rx="4" stroke="currentColor" stroke-width="2"/><path d="M18 26h28M18 34h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <h3>Students</h3>
+            <p>Practise <strong>English to Burmese translation sentences</strong> and vocabulary, then listen.</p>
+          </article>
+          <article>
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/><circle cx="42" cy="26" r="7" stroke="currentColor" stroke-width="2"/><path d="M10 50c2-10 10-14 14-14s12 4 14 10M36 50c1-8 6-12 10-12s8 3 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <h3>Families</h3>
+            <p>Draft a quick <strong>English to Burmese translate</strong> message before you send it.</p>
+          </article>
+          <article>
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="18" stroke="currentColor" stroke-width="2"/><path d="M32 14v36M14 32h36M20 20c8 6 16 6 24 0M20 44c8-6 16-6 24 0" stroke="currentColor" stroke-width="2"/></svg>
+            <h3>Travellers</h3>
+            <p>Phrases you can also hear as Burmese audio at the counter or on the road.</p>
+          </article>
+          <article>
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M12 44V20l20-8 20 8v24l-20 8-20-8z" stroke="currentColor" stroke-width="2"/><path d="M32 12v40M12 20l20 8 20-8" stroke="currentColor" stroke-width="2"/></svg>
+            <h3>Teachers &amp; teams</h3>
+            <p><strong>Translate from English to Burmese</strong> captions, emails, and PDF handouts.</p>
+          </article>
+        </div>
+        <p class="fine">Machine output is for drafts and study. For legal, medical, or certified work, have a human review it. See the <a href="/disclaimer">Disclaimer</a>.</p>
+      </section>
+
+      <section class="block script" id="script">
+        <div class="script-grid">
+          <div>
+            <p class="kicker">Script</p>
+            <h2>Unicode Myanmar, not Zawgyi</h2>
+            <p>This <strong>English to Burmese</strong> tool returns Unicode so copied text pastes into Messenger, email, Google Docs, and modern phones. Older Zawgyi pages can look broken in current browsers.</p>
+            <p>If a result looks scrambled on a very old device, update the font or OS rather than switching encoding. Readable <strong>English to Burmese language translation</strong> is the goal.</p>
+          </div>
+          <figure class="script-art" aria-hidden="true">
+            <svg viewBox="0 0 280 200" fill="none">
+              <rect x="16" y="20" width="248" height="160" rx="18" fill="#fffaf1" stroke="#d9ccb4"/>
+              <rect x="36" y="40" width="100" height="120" rx="12" fill="#ece3d2"/>
+              <rect x="148" y="40" width="100" height="120" rx="12" fill="#4a1520"/>
+              <text x="86" y="108" text-anchor="middle" fill="#4a1520" font-size="18" font-family="serif">Aa</text>
+              <text x="198" y="112" text-anchor="middle" fill="#e8c57a" font-size="22" font-family="serif">သ</text>
+              <path d="M136 100h12" stroke="#d4a24a" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <figcaption>English box to Myanmar box</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="block tips" id="tips">
+        <div class="block-head">
+          <p class="kicker">Clearer results</p>
+          <h2>How to get a better English to Burmese translation</h2>
+        </div>
+        <ol class="tips-list">
+          <li><strong>Write complete sentences.</strong> Avoid all-caps and unexplained abbreviations.</li>
+          <li><strong>One idea per line</strong> when you <strong>translate English to Burmese</strong> study material.</li>
+          <li><strong>Quiet room for Talk</strong> if you need accurate <strong>translate English to Burmese audio</strong>.</li>
+          <li><strong>Play Burmese</strong> and follow the Myanmar box before you send the text.</li>
+          <li><strong>Prefer .docx or text PDFs</strong> over photographed pages.</li>
+        </ol>
+      </section>
+
+      <section class="block faq-block" id="faq" aria-labelledby="faq-heading">
+        <div class="block-head">
+          <p class="kicker">FAQ</p>
+          <h2 id="faq-heading">English to Burmese questions</h2>
+        </div>
+        <div class="faq">
+          {faqs.map((item) => (
+            <details>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+        <p class="fine">More on <a href="/about">About</a>, <a href="/contact">Contact us</a>, <a href="/terms">Terms</a>, and <a href="/privacy">Privacy</a>. Scroll up to run your next <strong>English to Burmese translation</strong>.</p>
+      </section>
+    <script>
+      const $ = (id: string) => document.getElementById(id)!;
+
+      const source = $('source') as HTMLTextAreaElement;
+      const resultText = $('result-text');
+      const statusText = $('status-text');
+      const charCount = $('char-count');
+      const resultExtracted = $('result-extracted');
+      const resultFile = $('result-file');
+      const statusFile = $('status-file');
+      const fileNameEl = $('file-name');
+      const dropFile = $('drop-file');
+      const inputFile = $('input-file') as HTMLInputElement;
+      const btnTalk = $('btn-talk') as HTMLButtonElement;
+      const btnStopTalk = $('btn-stop-talk') as HTMLButtonElement;
+      const talkStatus = $('talk-status');
+
+      let docFile: File | null = null;
+      let lastBurmese = '';
+      let lastFileBurmese = '';
+      let speakAudio: HTMLAudioElement | null = null;
+      let speakUrl = '';
+      let talkBase = '';
+      let talkFinal = '';
+      let talking = false;
+      let talkStream: MediaStream | null = null;
+      let talkLoop = 0;
+      let recognition: SpeechRecognition | null = null;
+      let restartTalk = false;
+      let talkWatch = 0;
+
+      function setOutput(el: HTMLElement, value: string, emptyHint: string) {
+        if (!value) {
+          el.textContent = emptyHint;
+          el.classList.add('empty');
+        } else {
+          el.textContent = value;
+          el.classList.remove('empty');
+        }
+      }
+
+      function setStatus(el: HTMLElement, message: string, kind: '' | 'ok' | 'err' = '') {
+        el.textContent = message;
+        el.className = 'status' + (kind ? ' ' + kind : '');
+      }
+
+      function openTab(name: string) {
+        const allowed = ['text', 'file'];
+        if (!allowed.includes(name)) return;
+        document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String((t as HTMLElement).dataset.tab === name)));
+        document.querySelectorAll('.pane').forEach((p) => p.classList.toggle('active', p.id === 'pane-' + name));
+      }
+
+      document.querySelectorAll('.tab').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const name = (tab as HTMLElement).dataset.tab!;
+          openTab(name);
+          history.replaceState(null, '', '#' + name);
+        });
+      });
+
+      openTab((location.hash || '#text').slice(1));
+      window.addEventListener('hashchange', () => openTab(location.hash.slice(1)));
+
+      function updateCount() {
+        charCount.textContent = source.value.length.toLocaleString() + ' characters';
+      }
+
+      source.addEventListener('input', updateCount);
+
+      async function translateText() {
+        const text = source.value.trim();
+        if (!text) {
+          setStatus(statusText, 'Please enter English text.', 'err');
+          return;
+        }
+        const btn = $('btn-translate') as HTMLButtonElement;
+        btn.disabled = true;
+        setStatus(statusText, 'Translating...');
+        try {
+          const res = await fetch('/api/translate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text }),
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'Translation failed.');
+          if (!data.translation) throw new Error('No translation returned. Please try again.');
+          lastBurmese = data.translation;
+          setOutput(resultText, lastBurmese, 'Translation appears here.');
+          setStatus(statusText, 'Done.', 'ok');
+        } catch (err) {
+          setStatus(statusText, err instanceof Error ? err.message : 'Translation failed.', 'err');
+        } finally {
+          btn.disabled = false;
+        }
+      }
+
+      $('btn-translate').addEventListener('click', () => void translateText());
+      source.addEventListener('keydown', (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+          event.preventDefault();
+          void translateText();
+        }
+      });
+
+      $('btn-clear').addEventListener('click', () => {
+        stopTalk();
+        stopBurmeseAudio();
+        source.value = '';
+        updateCount();
+        lastBurmese = '';
+        setOutput(resultText, '', 'Translation appears here.');
+        setStatus(statusText, '');
+      });
+
+      $('btn-copy').addEventListener('click', async () => {
+        if (!lastBurmese) return;
+        await navigator.clipboard.writeText(lastBurmese);
+        setStatus(statusText, 'Copied.', 'ok');
+      });
+
+      function stopBurmeseAudio() {
+        speakAudio?.pause();
+        speakAudio = null;
+        if (speakUrl) URL.revokeObjectURL(speakUrl);
+        speakUrl = '';
+      }
+
+      async function playBurmese(text: string, statusEl: HTMLElement, btn: HTMLButtonElement) {
+        const value = text.trim();
+        if (!value) {
+          setStatus(statusEl, 'Translate first, then play Burmese audio.', 'err');
+          return;
+        }
+        stopBurmeseAudio();
+        btn.disabled = true;
+        setStatus(statusEl, 'Preparing Burmese audio...');
+        speakAudio = new Audio();
+        void speakAudio.play().catch(() => undefined);
+        try {
+          const res = await fetch('/api/speak', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: value }),
+          });
+          if (!res.ok) {
+            const data = await res.json().catch(() => ({}));
+            throw new Error(data.error || 'Could not play Burmese audio.');
+          }
+          const blob = await res.blob();
+          speakUrl = URL.createObjectURL(blob);
+          speakAudio.src = speakUrl;
+          speakAudio.onended = () => setStatus(statusEl, 'Finished playing.', 'ok');
+          speakAudio.onerror = () => setStatus(statusEl, 'Could not play Burmese audio.', 'err');
+          await speakAudio.play();
+          setStatus(statusEl, 'Playing Burmese audio.', 'ok');
+        } catch (err) {
+          setStatus(statusEl, err instanceof Error ? err.message : 'Could not play Burmese audio.', 'err');
+        } finally {
+          btn.disabled = false;
+        }
+      }
+
+      $('btn-speak').addEventListener('click', () => {
+        void playBurmese(lastBurmese, statusText, $('btn-speak') as HTMLButtonElement);
+      });
+
+      function setTalking(on: boolean) {
+        talking = on;
+        btnTalk.hidden = on;
+        btnStopTalk.hidden = !on;
+        source.classList.toggle('listening', on);
+      }
+
+      function writeSpoken(interim = '') {
+        const parts = [talkBase, talkFinal, interim].map((part) => part.trim()).filter(Boolean);
+        source.value = parts.join(' ');
+        source.scrollTop = source.scrollHeight;
+        updateCount();
+      }
+
+      function recorderOptions(): MediaRecorderOptions {
+        const types = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'];
+        const found = types.find((type) => MediaRecorder.isTypeSupported(type));
+        return found ? { mimeType: found } : {};
+      }
+
+      function recordSlice(stream: MediaStream, ms: number): Promise<Blob> {
+        return new Promise((resolve, reject) => {
+          const rec = new MediaRecorder(stream, recorderOptions());
+          const parts: Blob[] = [];
+          rec.ondataavailable = (event) => {
+            if (event.data.size) parts.push(event.data);
+          };
+          rec.onerror = () => reject(new Error('Microphone recording failed.'));
+          rec.onstop = () => resolve(new Blob(parts, { type: rec.mimeType || 'audio/webm' }));
+          rec.start(250);
+          window.setTimeout(() => {
+            if (rec.state !== 'inactive') rec.stop();
+          }, ms);
+        });
+      }
+
+      async function transcribeBlob(blob: Blob): Promise<string> {
+        if (blob.size < 800) return '';
+        const form = new FormData();
+        const ext = blob.type.includes('mp4') ? 'm4a' : 'webm';
+        form.append('file', blob, 'talk.' + ext);
+        const res = await fetch('/api/transcribe', { method: 'POST', body: form });
+        const data = await res.json();
+        if (!res.ok) return '';
+        return String(data.text || '').trim();
+      }
+
+      async function talkCycle(stream: MediaStream, token: number) {
+        let queue = Promise.resolve();
+        while (talking && talkLoop === token) {
+          try {
+            const blob = await recordSlice(stream, 2400);
+            if (!talking || talkLoop !== token) break;
+            queue = queue.then(async () => {
+              if (!talking || talkLoop !== token) return;
+              const text = await transcribeBlob(blob);
+              if (!talking || talkLoop !== token || !text) return;
+              talkFinal = [talkFinal, text].filter(Boolean).join(' ');
+              writeSpoken();
+              setStatus(talkStatus, 'Listening... words appear as you speak.');
+            });
+          } catch {
+            if (!talking || talkLoop !== token) break;
+          }
+        }
+        await queue.catch(() => undefined);
+      }
+
+      const SpeechEngine = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      function createRecognizer() {
+        if (!SpeechEngine) return null;
+        const engine = new SpeechEngine();
+        engine.lang = 'en-US';
+        engine.continuous = true;
+        engine.interimResults = true;
+        engine.maxAlternatives = 1;
+        engine.onstart = () => {
+          setTalking(true);
+          setStatus(talkStatus, 'Listening... words appear as you speak.');
+        };
+        engine.onresult = (event) => {
+          window.clearTimeout(talkWatch);
+          let interim = '';
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            const piece = event.results[i][0].transcript.trim();
+            if (!piece) continue;
+            if (event.results[i].isFinal) talkFinal = [talkFinal, piece].filter(Boolean).join(' ');
+            else interim = [interim, piece].filter(Boolean).join(' ');
+          }
+          writeSpoken(interim);
+        };
+        engine.onerror = (event) => {
+          const err = event.error;
+          if (err === 'aborted' || err === 'no-speech') return;
+          restartTalk = false;
+          if (err === 'not-allowed' || err === 'service-not-allowed') {
+            setTalking(false);
+            setStatus(talkStatus, 'Allow the microphone in the address bar, then tap Talk again.', 'err');
+            return;
+          }
+          void startMicTalk();
+        };
+        engine.onend = () => {
+          if (restartTalk) {
+            try {
+              engine.start();
+              return;
+            } catch {
+              restartTalk = false;
+            }
+          }
+          recognition = null;
+          if (talkStream) return;
+          setTalking(false);
+          writeSpoken();
+          if (talkStatus.textContent?.startsWith('Listening')) {
+            setStatus(talkStatus, talkFinal ? 'Added to the English box.' : 'Stopped.', 'ok');
+          }
+        };
+        return engine;
+      }
+
+      async function startMicTalk() {
+        if (talkStream) return;
+        if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
+          setTalking(false);
+          setStatus(talkStatus, 'Could not hear speech. Allow the microphone and tap Talk again.', 'err');
+          return;
+        }
+        try {
+          talkStream = await navigator.mediaDevices.getUserMedia({
+            audio: { echoCancellation: true, noiseSuppression: true },
+          });
+        } catch {
+          setTalking(false);
+          setStatus(talkStatus, 'Allow the microphone in the address bar, then tap Talk again.', 'err');
+          return;
+        }
+        talkLoop += 1;
+        setTalking(true);
+        setStatus(talkStatus, 'Listening... words appear as you speak.');
+        void talkCycle(talkStream, talkLoop);
+      }
+
+      async function startTalk() {
+        if (talking) return;
+        talkBase = source.value.trim();
+        talkFinal = '';
+        restartTalk = true;
+        setStatus(talkStatus, 'Allow the microphone, then speak English.');
+        if (SpeechEngine) {
+          recognition = createRecognizer();
+          try {
+            recognition?.start();
+            talkWatch = window.setTimeout(() => {
+              if (talkFinal) return;
+              restartTalk = false;
+              recognition?.stop();
+              recognition = null;
+              void startMicTalk();
+            }, 3500);
+            return;
+          } catch {
+            restartTalk = false;
+          }
+        }
+        await startMicTalk();
+      }
+
+      function stopTalk() {
+        restartTalk = false;
+        window.clearTimeout(talkWatch);
+        talkLoop += 1;
+        talking = false;
+        recognition?.stop();
+        recognition = null;
+        talkStream?.getTracks().forEach((track) => track.stop());
+        talkStream = null;
+        setTalking(false);
+        writeSpoken();
+        if (talkStatus.textContent?.startsWith('Listening')) {
+          setStatus(talkStatus, talkFinal ? 'Added to the English box.' : 'Stopped.', 'ok');
+        }
+      }
+
+      btnTalk.addEventListener('click', () => void startTalk());
+      btnStopTalk.addEventListener('click', stopTalk);
+
+      function bindDrop(zone: HTMLElement, input: HTMLInputElement, onFile: (file: File) => void) {
+        zone.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          zone.classList.add('over');
+        });
+        zone.addEventListener('dragenter', (e) => {
+          e.preventDefault();
+          zone.classList.add('over');
+        });
+        zone.addEventListener('dragleave', (e) => {
+          if (!zone.contains(e.relatedTarget as Node)) zone.classList.remove('over');
+        });
+        zone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          zone.classList.remove('over');
+          const file = e.dataTransfer?.files?.[0];
+          if (file) {
+            input.files = e.dataTransfer.files;
+            onFile(file);
+          }
+        });
+        zone.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            input.click();
+          }
+        });
+        input.addEventListener('change', () => {
+          const file = input.files?.[0];
+          if (file) onFile(file);
+        });
+      }
+
+      bindDrop(dropFile, inputFile, (file) => {
+        docFile = file;
+        dropFile.classList.add('has-file');
+        const title = dropFile.querySelector('h3');
+        const hint = dropFile.querySelector('p');
+        if (title) title.textContent = file.name;
+        if (hint) hint.textContent = Math.round(file.size / 1024) + ' KB · ready to translate';
+        fileNameEl.textContent = 'Selected: ' + file.name;
+        setStatus(statusFile, 'Ready: ' + file.name);
+      });
+
+      $('btn-file').addEventListener('click', async () => {
+        if (!docFile) {
+          setStatus(statusFile, 'Please choose a .txt, .docx, or .pdf file.', 'err');
+          return;
+        }
+        const btn = $('btn-file') as HTMLButtonElement;
+        btn.disabled = true;
+        setStatus(statusFile, 'Extracting and translating...');
+        try {
+          const form = new FormData();
+          form.append('file', docFile);
+          const res = await fetch('/api/translate-file', { method: 'POST', body: form });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'File translation failed.');
+          lastFileBurmese = data.translation;
+          setOutput(resultExtracted, data.source, 'Document text appears here.');
+          setOutput(resultFile, lastFileBurmese, 'Translation appears here.');
+          setStatus(statusFile, 'Done.', 'ok');
+        } catch (err) {
+          setStatus(statusFile, err instanceof Error ? err.message : 'File translation failed.', 'err');
+        } finally {
+          btn.disabled = false;
+        }
+      });
+
+      $('btn-copy-file').addEventListener('click', async () => {
+        if (!lastFileBurmese) return;
+        await navigator.clipboard.writeText(lastFileBurmese);
+        setStatus(statusFile, 'Copied.', 'ok');
+      });
+
+      $('btn-speak-file').addEventListener('click', () => {
+        void playBurmese(lastFileBurmese, statusFile, $('btn-speak-file') as HTMLButtonElement);
+      });
+
+      $('btn-download').addEventListener('click', () => {
+        if (!lastFileBurmese) return;
+        const blob = new Blob([lastFileBurmese], { type: 'text/plain;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'burmese-translation.txt';
+        a.click();
+      });
+    </script>
+</Layout>

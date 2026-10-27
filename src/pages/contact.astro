@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact Us | English to Burmese Translator"
+  description="Contact englishtoburmese.com about the free English to Burmese translator, English to Burmese translation online, or audio and document support."
+  current="contact"
+  path="/contact"
+>
+  <article class="legal">
+    <p class="legal-kicker">englishtoburmese.com</p>
+    <h1>Contact us</h1>
+    <p class="legal-meta">We usually reply within a few business days.</p>
+    <div class="legal-body">
+      <p>
+        Use this form for questions, translation feedback, or website issues. Do not send passwords, identity documents, or other sensitive personal data.
+      </p>
+      <p>
+        Email: <a href="mailto:hello@englishtoburmese.com">hello@englishtoburmese.com</a>
+      </p>
+      <form class="contact-form" id="contact-form">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required maxlength="120" autocomplete="name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required maxlength="160" autocomplete="email" />
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" required maxlength="160" />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required maxlength="4000"></textarea>
+        </div>
+        <div class="row">
+          <button class="primary" type="submit">Send message</button>
+          <span class="status" id="contact-status"></span>
+        </div>
+      </form>
+    </div>
+  </article>
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const status = document.getElementById('contact-status')!;
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = String(data.get('name') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      const subject = String(data.get('subject') || '').trim();
+      const message = String(data.get('message') || '').trim();
+      const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+      window.location.href = `mailto:hello@englishtoburmese.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      status.textContent = 'Opening your email app...';
+      status.className = 'status ok';
+    });
+  </script>
+</Layout>
