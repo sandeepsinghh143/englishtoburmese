@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbs = [
+  { name: 'Blog', path: '/blog' },
+];
+
+const title = 'English to Burmese Translation Blog | Guides, Tools & Tips';
+const description =
+  'Read expert guides and reviews on English to Burmese translation online. Learn how to translate English to Burmese accurately and explore the top English to Burmese translators.';
+
+const articles = [
+  {
+    slug: 'how-to-translate-english-to-burmese',
+    title: 'How to Translate English to Burmese: Complete Beginner & Practical Guide',
+    excerpt:
+      'Master English to Burmese translation with practical steps. Learn Subject-Object-Verb (SOV) sentence ordering, standard Unicode Myanmar script, voice audio dictation, document extraction, and how to avoid common Zawgyi errors.',
+    date: '27 October 2026',
+    readTime: '7 min read',
+    tag: 'Guide',
+  },
+  {
+    slug: 'top-english-to-burmese-translators',
+    title: 'Top English to Burmese Translators in 2026: In-Depth Comparison & Reviews',
+    excerpt:
+      'Compare the top English to Burmese translators available online. See how dedicated translators match up against Google Translate, Microsoft Translator, and human services for text, speech, documents, and Unicode font rendering.',
+    date: '27 October 2026',
+    readTime: '8 min read',
+    tag: 'Comparison',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'English to Burmese Translation Blog',
+    description,
+    url: 'https://englishtoburmese.com/blog',
+    blogPost: articles.map((article) => ({
+      '@type': 'BlogPosting',
+      headline: article.title,
+      description: article.excerpt,
+      url: `https://englishtoburmese.com/blog/${article.slug}`,
+      datePublished: '2026-10-27',
+      dateModified: '2026-10-27',
+      author: {
+        '@type': 'Organization',
+        name: 'englishtoburmese.com',
+      },
+    })),
+  },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  current="blog"
+  path="/blog"
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+>
+  <div class="blog-header">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/">
+            <span itemprop="name">Home</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li aria-hidden="true" class="crumb-separator">/</li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <span itemprop="name">Blog</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
+    <p class="kicker">Guides &amp; Resources</p>
+    <h1>English to Burmese Translation Blog</h1>
+    <p>
+      In-depth guides, practical tips, and tool comparisons to help you translate English to Burmese text, sentences, audio, and documents with maximum linguistic accuracy.
+    </p>
+  </div>
+
+  <section class="blog-grid" aria-label="Blog articles">
+    {articles.map((article) => (
+      <a href={`/blog/${article.slug}`} class="blog-card">
+        <div class="blog-meta">
+          <span class="blog-tag">{article.tag}</span>
+          <time datetime="2026-10-27">{article.date}</time>
+          <span>•</span>
+          <span>{article.readTime}</span>
+        </div>
+        <h2>{article.title}</h2>
+        <p>{article.excerpt}</p>
+        <span class="blog-read-more">Read guide &rarr;</span>
+      </a>
+    ))}
+  </section>
+
+  <div class="legal-nav-back">
+    <a href="/" class="btn-back">← Back to English to Burmese Translator</a>
+  </div>
+</Layout>

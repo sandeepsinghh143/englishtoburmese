@@ -11,10 +11,37 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/" />
   </url>
   <url>
-    <loc>https://englishtoburmese.com/about</loc>
+    <loc>https://englishtoburmese.com/blog</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://englishtoburmese.com/blog" />
+    <xhtml:link rel="alternate" hreflang="my" href="https://englishtoburmese.com/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/blog" />
+  </url>
+  <url>
+    <loc>https://englishtoburmese.com/blog/how-to-translate-english-to-burmese</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://englishtoburmese.com/blog/how-to-translate-english-to-burmese" />
+    <xhtml:link rel="alternate" hreflang="my" href="https://englishtoburmese.com/blog/how-to-translate-english-to-burmese" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/blog/how-to-translate-english-to-burmese" />
+  </url>
+  <url>
+    <loc>https://englishtoburmese.com/blog/top-english-to-burmese-translators</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://englishtoburmese.com/blog/top-english-to-burmese-translators" />
+    <xhtml:link rel="alternate" hreflang="my" href="https://englishtoburmese.com/blog/top-english-to-burmese-translators" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/blog/top-english-to-burmese-translators" />
+  </url>
+  <url>
+    <loc>https://englishtoburmese.com/about</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://englishtoburmese.com/about" />
     <xhtml:link rel="alternate" hreflang="my" href="https://englishtoburmese.com/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/about" />
@@ -23,7 +50,7 @@
     <loc>https://englishtoburmese.com/contact</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://englishtoburmese.com/contact" />
     <xhtml:link rel="alternate" hreflang="my" href="https://englishtoburmese.com/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/contact" />
@@ -32,7 +59,7 @@
     <loc>https://englishtoburmese.com/disclaimer</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://englishtoburmese.com/disclaimer" />
     <xhtml:link rel="alternate" hreflang="my" href="https://englishtoburmese.com/disclaimer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/disclaimer" />
@@ -41,7 +68,7 @@
     <loc>https://englishtoburmese.com/terms</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://englishtoburmese.com/terms" />
     <xhtml:link rel="alternate" hreflang="my" href="https://englishtoburmese.com/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/terms" />
@@ -50,7 +77,7 @@
     <loc>https://englishtoburmese.com/privacy</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://englishtoburmese.com/privacy" />
     <xhtml:link rel="alternate" hreflang="my" href="https://englishtoburmese.com/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://englishtoburmese.com/privacy" />

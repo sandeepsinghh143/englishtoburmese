@@ -17,6 +17,9 @@ englishtoburmese.com is a specialized, web-based translation tool dedicated excl
 ## Key URLs
 
 - [Homepage & Translator](https://englishtoburmese.com/): Interactive translation interface for text, voice, and documents.
+- [Blog Index](https://englishtoburmese.com/blog): Language tutorials, guides, and translation tool comparisons.
+- [How to Translate English to Burmese](https://englishtoburmese.com/blog/how-to-translate-english-to-burmese): Comprehensive tutorial covering SOV grammar, voice input, and document workflows.
+- [Top English to Burmese Translators in 2026](https://englishtoburmese.com/blog/top-english-to-burmese-translators): Detailed review and feature comparison of top online tools.
 - [About Us](https://englishtoburmese.com/about): Background on the platform, mission, and technology stack.
 - [Contact Us](https://englishtoburmese.com/contact): Support, feedback, and issue reporting.
 - [Disclaimer](https://englishtoburmese.com/disclaimer): Machine translation limitations, non-certified usage notes, and accuracy considerations.

@@ -912,8 +912,183 @@ td.yes { color: var(--ok); font-weight: 700; }
   transform: translateX(-2px);
 }
 
+/* Blog styles */
+.blog-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 12px auto 36px;
+}
+.blog-header h1 {
+  font-family: Fraunces, serif;
+  font-size: clamp(2rem, 3.8vw, 2.7rem);
+  color: var(--wine-deep);
+  margin: 0 0 14px;
+  line-height: 1.15;
+}
+.blog-header p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.blog-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(44, 12, 20, 0.2);
+  border-color: var(--gold);
+}
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.blog-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(74, 21, 32, 0.08);
+  color: var(--wine);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.blog-card h2 {
+  font-family: Fraunces, serif;
+  font-size: 22px;
+  color: var(--wine-deep);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.blog-card p {
+  color: #4a3c33;
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+.blog-read-more {
+  font-weight: 700;
+  color: var(--wine);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+.blog-card:hover .blog-read-more {
+  color: var(--gold);
+}
+
+/* Article Page styles */
+.article-header {
+  margin-bottom: 28px;
+}
+.article-header h1 {
+  font-family: Fraunces, serif;
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+  color: var(--wine-deep);
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--mist);
+}
+.article-body {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #33261f;
+}
+.article-body h2 {
+  font-family: Fraunces, serif;
+  font-size: 24px;
+  color: var(--wine-deep);
+  margin: 36px 0 12px;
+  line-height: 1.3;
+}
+.article-body h3 {
+  font-family: Fraunces, serif;
+  font-size: 19px;
+  color: var(--wine);
+  margin: 24px 0 8px;
+}
+.article-body p {
+  margin: 0 0 18px;
+}
+.article-body ul, .article-body ol {
+  margin: 0 0 20px;
+  padding-left: 24px;
+}
+.article-body li {
+  margin-bottom: 8px;
+}
+.article-body a {
+  color: var(--wine);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.article-body a:hover {
+  color: var(--gold);
+}
+.callout-box {
+  background: #fff8eb;
+  border-left: 4px solid var(--gold);
+  border-radius: 0 14px 14px 0;
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+.callout-box p {
+  margin: 0;
+  font-size: 15px;
+  color: #443224;
+}
+.callout-box strong {
+  color: var(--wine-deep);
+}
+.burmese-phrase {
+  font-family: 'Noto Sans Myanmar', sans-serif;
+  font-weight: 600;
+  color: var(--wine);
+  background: #fdf5ea;
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--mist);
+}
+.table-responsive {
+  overflow-x: auto;
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
 @media (max-width: 860px) {
-  .hero, .grid, .file-results, .why-grid, .steps, .usage-layout, .audience-grid, .script-grid, .footer-cols, .site-footer-inner { grid-template-columns: 1fr; }
+  .hero, .grid, .file-results, .why-grid, .steps, .usage-layout, .audience-grid, .script-grid, .footer-cols, .site-footer-inner, .blog-grid { grid-template-columns: 1fr; }
   .file-results { grid-template-rows: none; }
   .file-results .output { height: 200px; min-height: 200px; max-height: 200px; }
   .site-header-inner { flex-direction: column; align-items: flex-start; }

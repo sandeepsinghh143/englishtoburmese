@@ -44,6 +44,9 @@ Burmese uses sentence-final polite markers that vary by gender and formality:
 ## 3. Web Pages on the Site
 
 - **Home (`/`):** Full translation suite with Text and File tabs, live character counter, Talk dictation, Burmese audio playback, FAQ accordion, comparison table, and usage guides.
+- **Blog (`/blog`):** Guides, tutorials, and comparisons for English to Burmese translation.
+- **Article: How to Translate English to Burmese (`/blog/how-to-translate-english-to-burmese`):** In-depth practical tutorial on SOV grammar, polite particles, voice dictation, and document translation.
+- **Article: Top English to Burmese Translators (`/blog/top-english-to-burmese-translators`):** Comparison and review of englishtoburmese.com, Google Translate, Microsoft Translator, and human services.
 - **About (`/about`):** Detailed overview of our mission, the technology behind our speech and text pipelines, and team values.
 - **Contact (`/contact`):** Dedicated contact form and direct email channel (`hello@englishtoburmese.com`) for bug reports, dictionary suggestions, and partnership queries.
 - **Disclaimer (`/disclaimer`):** Explicit guidance regarding automated translation accuracy and non-suitability for official/legal/medical certification without human review.
